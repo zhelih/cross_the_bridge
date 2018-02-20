@@ -34,6 +34,8 @@ let create n = Array.init n (fun _ -> DynArray.create ())
 let nb_vertex t = Array.length t
 
 let add_edge t src dst w = DynArray.add t.(src) (dst,w)
+let add_edge_u t src dst w = add_edge t src dst w; add_edge t dst src w
+
 let iter_vertex f t = for i = 0 to nb_vertex t do f i done
 let fold_vertex f t s0 =
   let n = nb_vertex t in
