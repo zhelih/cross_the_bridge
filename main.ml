@@ -8,13 +8,9 @@ let () =
   let left_side = pw in
   let right_side = pw in
 
-  let n = 2 * (List.length left_side) in
+  let n = List.length left_side in
+  let g = Mygraph.create (2*n) in
 
-  let g = Mygraph.create n in
-
-(*   let module G = Path in *)
-  let module G = Graph.Path in
-(*   let module G = Ocamlgraph.Path in *)
-(*   let module G = OcamlGraph.Path in *)
-  let module Dijkstra = Graph.Path.Dijsktra(Mygraph)(Mygraph.W) in
-  ()
+  let module Dijkstra = Graph.Path.Dijkstra(Mygraph)(Mygraph.W) in
+  let (_,length) = Dijkstra.shortest_path g 0 1 in
+  print_int length; print_endline ""

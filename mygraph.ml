@@ -5,7 +5,7 @@ module V = struct
 type t = int
 let compare = compare
 let hash = Hashtbl.hash
-let equals = (=)
+let equal = (=)
 end
 
 module E = struct

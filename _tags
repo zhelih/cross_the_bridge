@@ -1,2 +1,1 @@
 <*.ml>: -annot, bin_annot
-true: package(ocamlgraph), package(extlib)
