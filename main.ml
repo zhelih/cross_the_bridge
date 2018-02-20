@@ -5,8 +5,12 @@ let () =
   let univ = [1; 3; 6; 8; 12] in
   let pw = subsets univ in
 
-  let _left_side = pw in
-  let _right_side = pw in
+  let left_side = pw in
+  let right_side = pw in
+
+  let n = 2 * (List.length left_side) in
+
+  let g = Mygraph.create n in
 
 (*   let module G = Path in *)
   let module G = Graph.Path in
